@@ -26,8 +26,7 @@ PAUSE_AFTER_NEW_PROCSS=500
 # Maximum number of parallel uploads
 MAXPROCESSES=2
 
-# Maximum size of file part to upload in kilobytes. Rule of thumb: the more reliable the connection the larger the value you can pick.
-# Chosing large values on bad connections will stall the upload and result in very low speed.
+# Maximum size of file part to upload in kilobytes. Rule of thumb: the more reliable the connection the larger the value you can pick. # Chosing large values on bad connections will stall the upload and result in very low speed.
 PARTSIZE_KB=64
 
 # Fail at most that many times when merging parts at the target server
@@ -69,12 +68,10 @@ Q: Can I specify the password to use for ssh ?
 A: No. SSH must be set up to allow non-interactive login (i.e. keyfile)
 
 Q: What is the best setting for MAXPROCESSES and PARTSIZE_KB ?
-A: That depends on your connection. Unreliable connections will require smaller PARTSIZE_KBs, a slow ssh handshake will benefit from
-larger MAXPROCESSES. The best thing is to try it out.
+A: That depends on your connection. Unreliable connections will require smaller PARTSIZE_KBs, a slow ssh handshake will benefit from larger MAXPROCESSES. The best thing is to try it out.
 
 Q: It hangs
-A: Assuming that your network connection to the remote server is not completely dead, make sure you have disabled ControlMaster in
-ssh_config. If enabled, it will simulate multiple ssh connections over the same TCP connection which defies the purpose of this programme.
+A: Assuming that your network connection to the remote server is not completely dead, make sure you have disabled ControlMaster in ssh_config. If enabled, it will simulate multiple ssh connections over the same TCP connection which defies the purpose of this programme.
 
 Q: Merging doesn't seem to work
 A: You need a bash on the remote server
